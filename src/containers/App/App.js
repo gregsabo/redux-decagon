@@ -49,17 +49,16 @@ export default class App extends Component {
   }
 
   render() {
-    const {user} = this.props;
     const styles = require('./App.scss');
-
+    const {user} = this.props;
     return (
       <div className={styles.app}>
         <Helmet {...config.app.head}/>
-        <Navbar fixedTop>
+        <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
               <IndexLink to="/">
-                <div className={styles.brand}/>
+                <div/>
                 <span>{config.app.title}</span>
               </IndexLink>
             </Navbar.Brand>
@@ -73,11 +72,11 @@ export default class App extends Component {
               </LinkContainer>
             </Nav>
             {user &&
-            <p className={styles.loggedInMessage + ' navbar-text'}>Logged in as <strong>{user.name}</strong>.</p>}
+            <p>Logged in as <strong>{user.name}</strong>.</p>}
           </Navbar.Collapse>
         </Navbar>
 
-        <div className={styles.appContent}>
+        <div>
           {this.props.children}
         </div>
       </div>

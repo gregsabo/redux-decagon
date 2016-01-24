@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { IndexLink } from 'react-router';
-import { LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
@@ -57,10 +56,9 @@ export default class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <IndexLink to="/">
-                <div/>
-                <span>{config.app.title}</span>
-              </IndexLink>
+              <IndexLinkContainer to="/">
+                <a>{config.app.title}</a>
+              </IndexLinkContainer>
             </Navbar.Brand>
             <Navbar.Toggle/>
           </Navbar.Header>

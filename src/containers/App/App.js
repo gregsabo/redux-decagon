@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Grid, Row, Col } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
 import { pushState } from 'redux-router';
@@ -74,9 +74,13 @@ export default class App extends Component {
           </Navbar.Collapse>
         </Navbar>
 
-        <div>
-          {this.props.children}
-        </div>
+        <Grid>
+          <Row>
+            <Col>
+              {this.props.children}
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
